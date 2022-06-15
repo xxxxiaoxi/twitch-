@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+
+
+    function fn() {
+        console.log('in fn ' ,this);
+
+        const run = () => {
+            console.log('in run1 ' ,this);
+            console.log('in run2 ' ,this.fn);
+        }
+        run();
+    }
+
+    let item1 = {
+        a : 1,
+        fn : fn
+    }
+
+    item1.fn(); //?
+
+
+
+    // ES6 / React / JSX code from here
+</script>
+</body>
+</html>
